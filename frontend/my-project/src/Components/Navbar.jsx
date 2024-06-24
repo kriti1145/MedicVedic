@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import logo from "../assets/Images/logo.png";
 
 function Navbar() {
   /* hook to manage the scroll state*/
@@ -23,13 +24,13 @@ function Navbar() {
         <a>Home</a>
       </li>
       <li>
-        <a>Course</a>
+        <a>Service</a>
+      </li>
+      <li>
+        <a>Find a Doctor</a>
       </li>
       <li>
         <a>Contact</a>
-      </li>
-      <li>
-        <a>About</a>
       </li>
     </>
   );
@@ -72,12 +73,13 @@ function Navbar() {
                 {navItems}
               </ul>
             </div>
+            <img src={logo} alt="" className="w-8 h-8" />
             <a
-              className={`text-2xl font-bold cursor-pointer ${
+              className={`logo text-2xl font-bold cursor-pointer ${
                 sticky ? "logo-stick" : ""
               }`}
             >
-              NotesApp
+              MEDICVEDIC
             </a>
           </div>
           <div className="navbar-end space-x-3">
@@ -94,12 +96,12 @@ function Navbar() {
             </div>
             {/*search bar*/}
             <div className="hidden md:block">
-              <label className="px-3 py-2 rounded-md border border border-indigo-200 flex items-center gap-2">
+              <label className="px-3 py-2 rounded-md border border border-gray-500 flex items-center gap-2">
                 <input
                   type="text"
                   className={`grow outline-none search ${
                     sticky
-                      ? "search-bar focus:text-white duration-300 transition-all ease-in-out "
+                      ? "search-bar focus:text-black duration-300 transition-all ease-in-out "
                       : ""
                   }`}
                   placeholder="Search"
