@@ -95,6 +95,47 @@ h1{
   background-color: #F2F2F2;
 
 }
+.box {
+  transition: box-shadow .3s;
+  border-radius:10px;
+  border: 1px solid #ccc;
+  float: left;
+  background-color: #e6ece8;
+  
+}
+.box:hover {
+  box-shadow: 0 0 11px rgba(23, 23, 23, 0.2);
+  transform: translateXY(-0.25em); 
+}
+/* about*/
+.btn{
+  color: #313340;
+  background-color: #7cb8aa;
+  border-radius: 25px;
+}
+.aboutimg img{
+  transition: .5s ease;
+}
+.aboutimg:hover{
+  box-shadow:
+1px 1px #313340,
+2px 2px #313340,
+3px 3px #313340,
+4px 4px #313340,
+5px 5px #313340,
+6px 6px #313340;
+-webkit-transform: translateX(-3px);
+transform: translateX(-3px);
+transition: .5s ease;
+
+}
+.aboutbtn:hover{
+  background-color: #C5D9CC;
+  box-shadow: 0 0.9em 0.9em -0.8em rgb(13, 13, 13);
+  transform: translateY(-0.25em);
+  color: #313340;
+}
+
 /*footer*/
 .footer{
   background-color: #F2F2F2;
