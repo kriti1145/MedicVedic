@@ -4,8 +4,8 @@ import aboutImag from "../assets/Images/about.jpg";
 const About = () => {
   return (
     <>
-      <div className="max-w-screen-2xl container md:px-20 px-5 flex flex-col mx-auto md:flex-row py-10 md:ps-20 mt-[30px]">
-        <div className="flex justify-content gap-[50px] md:gap-[130px] xl:gap-0 flex-col md:flex-row">
+      <div className="max-w-screen-2xl container md:px-20 px-5 flex flex-col mx-auto md:flex-row py-10 md:ps-20">
+        <div className="flex justify-content gap-[50px] md:gap-[130px] xl:gap-0 flex-col md:flex-row mt-7">
           {/*====== about image ======*/}
           <div className="relative w-3/4 md:w-2/3 z-10 order-2 md:order-1 ms-9">
             <img src={aboutImag} alt="" className="aboutimg" />

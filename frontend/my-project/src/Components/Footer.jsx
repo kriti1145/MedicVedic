@@ -3,9 +3,9 @@ import logo from "../assets/Images/logo.png";
 function Footer() {
   return (
     <>
-      <div>
-        <hr className="mt-20" />
-        <footer className="footer p-10  text-base-content">
+      <div className="">
+        <hr className="pt-[30px]" />
+        <footer className="footer p-10 text-base-content">
           <aside className=" z-[1] p-2 w-full">
             <img src={logo} alt="" className="w-8 h-8" />
             <a className="footer-logo text-xl font-bold ">MEDICVEDIC</a>

@@ -6,10 +6,12 @@ import booking from "../assets/Images/booking.png";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import About from "../Components/About";
+import Service from "../Pages/Service";
+
 function Banner() {
   return (
     <>
-      <div className="max-w-screen-2xl container md:px-20 px-5 flex flex-col mx-auto md:flex-row py-10 md:ps-20">
+      <div className="max-w-screen-2xl container md:px-20 px-5 flex flex-col mx-auto md:flex-row py-10 md:ps-20 ">
         <div className=" order-2 md:order-1 w-full md:w-1/2 md:mt-32 mt-12 ">
           <div className="space-y-12 ">
             <h1 className="text-6xl font-bold">
@@ -64,7 +66,7 @@ function Banner() {
         </div>
       </div>
 
-      
+      {/*how it work section*/}
       <div className="max-w-screen-2xl  mx-auto md:px-20 px-4 m-3 py-1">
         <div className="mt-[30px]">
           <h1 className="text-3xl font-bold pb-2 text-center">
@@ -138,7 +140,11 @@ function Banner() {
           </div>
         </div>
       </div>
+
+      {/*======about section======*/}
       <About />
+      {/*====== Services======*/}
+      <Service />
     </>
   );
 }

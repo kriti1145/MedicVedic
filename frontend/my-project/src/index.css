@@ -108,7 +108,7 @@ h1{
   transform: translateXY(-0.25em); 
 }
 /* about*/
-.btn{
+.aboutbtn{
   color: #313340;
   background-color: #7cb8aa;
   border-radius: 25px;
