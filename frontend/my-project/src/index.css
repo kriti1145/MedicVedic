@@ -184,6 +184,16 @@ transition: .5s ease;
   transform: translateY(-0.25em);
   color: #313340;
 }
+.feature-img{
+  box-shadow:
+  1px 1px #313340,
+  2px 2px #313340,
+  3px 3px #313340,
+  4px 4px #313340,
+  5px 5px #313340,
+  6px 6px #313340;
+  transition: .5s ease;
+}
 
 /*footer*/
 .footer{

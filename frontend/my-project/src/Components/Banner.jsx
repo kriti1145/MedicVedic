@@ -8,6 +8,7 @@ import { BsArrowRight } from "react-icons/bs";
 import About from "../Components/About";
 import Service from "../Pages/Service";
 import Feature from "./Feature";
+import Doctor from "./Doctor";
 
 function Banner() {
   return (
@@ -148,6 +149,8 @@ function Banner() {
       <Service />
       {/*====== Features ======*/}
       <Feature />
+      {/*====== Doctor ======*/}
+      <Doctor />
     </>
   );
 }
