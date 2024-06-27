@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import About from "../Components/About";
 import Service from "../Pages/Service";
+import Feature from "./Feature";
 
 function Banner() {
   return (
@@ -31,12 +32,12 @@ function Banner() {
             Request an Appointement
           </button>
         </div>
-        <div className=" order-1 md:order-2 w-full md:w-1/2 md:mt-20  mt-10 p-200 ml-10 splash">
+        <div className=" order-1 md:order-2 w-full md:w-1/2 md:mt-20  mt-10 p-200 ml-10 splash ">
           {" "}
           <img
             src={img}
             alt=""
-            className="w-100 h-92 md:w-100 md:h-92
+            className="w-100 h-92 md:w-100 md:h-92 
            "
           />
         </div>
@@ -94,9 +95,9 @@ function Banner() {
               </p>
               <Link
                 to="/doctors"
-                className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-[#7cb8aa] hover:border-none"
+                className="w-[44px] h-[44px] rounded-full border border-solid border-[#7cb8aa] mt-[30px] mx-auto flex items-center justify-center group hover:bg-[#7cb8aa] hover:border-none    "
               >
-                <BsArrowRight className="group-hover:text-[#C5D9CC] w-6 h-5" />
+                <BsArrowRight className=" text-[#7cb8aa] group-hover:text-white w-6 h-5" />
               </Link>
             </div>
           </div>
@@ -113,9 +114,9 @@ function Banner() {
               </p>
               <Link
                 to="/doctors"
-                className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-[#7cb8aa] hover:border-none"
+                className="w-[44px] h-[44px] rounded-full border border-solid border-[#7cb8aa] mt-[30px] mx-auto flex items-center justify-center group hover:bg-[#7cb8aa] hover:border-none  "
               >
-                <BsArrowRight className="group-hover:text-[#C5D9CC] w-6 h-5" />
+                <BsArrowRight className=" text-[#7cb8aa] group-hover:text-white w-6 h-5" />
               </Link>
             </div>
           </div>
@@ -132,9 +133,9 @@ function Banner() {
               </p>
               <Link
                 to="/doctors"
-                className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-[#7cb8aa] hover:border-none"
+                className="w-[44px] h-[44px] rounded-full banner-link border border-solid border-[#7cb8aa] mt-[30px] mx-auto flex items-center justify-center group hover:bg-[#7cb8aa] hover:border-none  "
               >
-                <BsArrowRight className="group-hover:text-[#C5D9CC] w-6 h-5" />
+                <BsArrowRight className=" text-[#7cb8aa] group-hover:text-white w-6 h-5" />
               </Link>
             </div>
           </div>
@@ -145,6 +146,8 @@ function Banner() {
       <About />
       {/*====== Services======*/}
       <Service />
+      {/*====== Features ======*/}
+      <Feature />
     </>
   );
 }

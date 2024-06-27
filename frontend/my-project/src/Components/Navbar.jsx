@@ -20,16 +20,16 @@ function Navbar() {
   /*using the list component as a single entity to reuse it */
   const navItems = (
     <>
-      <li>
+      <li className="nav-li">
         <a>Home</a>
       </li>
-      <li>
+      <li className="nav-li">
         <a>Service</a>
       </li>
-      <li>
+      <li className="nav-li">
         <a>Find a Doctor</a>
       </li>
-      <li>
+      <li className="nav-li">
         <a>Contact</a>
       </li>
     </>

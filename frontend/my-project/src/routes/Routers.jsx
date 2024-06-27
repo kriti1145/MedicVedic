@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Banner from "../Components/Banner";
 import About from "../Components/About";
 import Service from "../Pages/Service";
+import Feature from "../Components/Feature";
 const Routers = () => {
   return (
     <>
@@ -12,6 +13,7 @@ const Routers = () => {
 
         <Route path="/findDoctor" element={<FindDoctor />} />
         <Route path="/service" element={<Service />} />
+        <Route path="/feature" element={<Feature />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </>
