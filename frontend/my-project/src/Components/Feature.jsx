@@ -4,7 +4,7 @@ import feaureImg from "../assets/Images/features/feature.jpg";
 const Feature = () => {
   return (
     <>
-      <div className="max-w-screen-2xl container md:px-20 px-5 flex flex-col mx-auto md:flex-row py-10 lg:gap-5">
+      <div className="max-w-screen-2xl container md:px-20 px-5 flex flex-col mx-auto md:flex-row py-10 md:py-16 lg:gap-5">
         <div className="flex flex-col-reverse md:flex-row w-full mx-auto justify-between items-center ">
           {/*====== about content ======*/}
           <div className="w-full lg:w-full px-5 md:px-[10px]  order-2 lg:order-1 md:text-left">

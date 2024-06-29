@@ -4,7 +4,7 @@ import aboutImag from "../assets/Images/about.jpg";
 const About = () => {
   return (
     <>
-      <div className="max-w-screen-2xl container mx-auto py-5 px-5 md:px-20">
+      <div className="max-w-screen-2xl container mx-auto py-5 px-5 md:px-20 py-10 md:py-16">
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
           {/*====== about image ======*/}
           <div className="relative w-full md:w-1/2 flex justify-center order-2 md:order-1">
