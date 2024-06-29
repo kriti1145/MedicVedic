@@ -8,25 +8,27 @@ const FaqItem = ({ item }) => {
   };
   return (
     <>
-      <div className="p-2 rounded-[12px] border border-solid  mb-5 cursor-pointer">
+      <div className="p-2 rounded-lg border border-solid  mb-4 cursor-pointer transition-all duration-300 ease-in-out hover:bg-[#e7f0dc]">
         <div
-          className="flex items-center justify-between gap-5"
+          className="flex items-center justify-between gap-4"
           onClick={toggleAccordion}
         >
-          <h4 className="text-[16px] leading-7 lg:text-[18px] font-semibold text-[#313340] p-1">
+          <h4 className="text-sm md:text-base lg:text-lg font-semibold text-[#313340] p-1 ">
             {item.question}
           </h4>
           <div
             className={`${
-              isOpen && " border-none"
-            } w-7 h-7 lg:w-8 lg:h-8 border border-solid border-[#7cb8aa] rounded flex items-center justify-center text-[#7cb8aa]`}
+              isOpen && "border-none"
+            } w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 border border-solid border-[#7cb8aa] rounded flex items-center justify-center text-[#7cb8aa] transition-all duration-300 ease-in-out transform ${
+              isOpen ? "rotate-180" : ""
+            }`}
           >
             {isOpen ? <AiOutlineMinus /> : <AiOutlinePlus />}
           </div>
         </div>
         {isOpen && (
-          <div className="">
-            <p className="text-[14px] leading-6 lg:text-[16px]  font-[500] p-1 text-[#333333]">
+          <div className="mt-2">
+            <p className="text-xs md:text-sm lg:text-base text-[#333333] leading-6">
               {item.content}
             </p>
           </div>

@@ -14,43 +14,41 @@ const DoctorCard = ({ doctor }) => {
   } = doctor;
   return (
     <>
-      <div className="p-3 lg:p-5 bg-[#d9e9df] border border-[#7cb8aa] rounded-[6px]">
+      <div className="p-4 lg:p-6 bg-[#d9e9df] border border-[#7cb8aa] rounded-lg flex flex-col h-full">
         <div>
           <img
             src={photo}
             alt="icon"
-            className="w-full bg-[#F2F2F2] rounded-[6px]"
+            className="w-full md:h-48 object-cover bg-[#F2F2F2] rounded-md mb-1 lg:mb-2"
           />
         </div>
-        <h2 className="text-[22px]  font-[600] mt-3 ">{name}</h2>
+        <h2 className="text-lg lg:text-xl font-semibold ">{name}</h2>
 
         <div className="mt-2 lg:mt-4 flex items-center justify-between">
-          <span className="bg-[#C5D9CC] py-1 px-2 text-[14px] text-[#333333] font-semibold rounded">
+          <span className="bg-[#C5D9CC] py-1 px-2 text-sm lg:text-base text-[#333333] font-semibold rounded">
             {specialization}
           </span>
-          <div className="flex items-center gap-[6px]">
-            <span className="flex items-center gap-[6px] text-[14px] font-semibold ">
-              <img src={star} alt="" className="h-4 w-4" />
+          <div className="flex items-center gap-2 lg:gap-3">
+            <span className="flex items-center text-sm lg:text-base font-semibold ">
+              <img src={star} alt="" className="h-4 w-4 " />
               {avgRating}
             </span>
-            <span className="text-[14px] font-[400] ">({totalRating})</span>
+            <span className="text-sm lg:text-base ">({totalRating})</span>
           </div>
         </div>
 
-        <div className="mt-[18px] md:mt-5 flex items-center justify-between">
+        <div className="mt-4 lg:mt-6 flex items-center justify-between gap-">
           <div>
-            <h3 className="text-[16px] font-semibold">
+            <h3 className="text-base lg:text-lg font-semibold">
               + {totalPatients} patients
             </h3>
-            <p className="text-[13px] font-[400] text-[#313340]">
-              At {hospital}
-            </p>
+            <p className="text-sm lg:text-base text-[#313340]">At {hospital}</p>
           </div>
           <Link
             to="/doctors"
-            className="w-[44px] h-[44px] rounded-full border border-solid border-[#7cb8aa] mt-3 flex items-center justify-center group hover:bg-[#7cb8aa] hover:border-none  "
+            className="w-[44px] h-[44px] rounded-full border border-solid border-[#7cb8aa] mt-3 flex items-center justify-center group hover:bg-[#7cb8aa] hover:border-none"
           >
-            <BsArrowRight className=" text-[#7cb8aa] group-hover:text-white w-6 h-5" />
+            <BsArrowRight className="text-[#7cb8aa] group-hover:text-white w-6 h-5" />
           </Link>
         </div>
       </div>

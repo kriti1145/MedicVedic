@@ -75,13 +75,13 @@ function Banner() {
           <h1 className="text-3xl font-bold pb-2">
             Providing the best medical services
           </h1>
-          <p className="lg:px-72 text-lg">
+          <p className="lg:px-7 text-lg">
             World class care for everyone, Our health System offers unmatched,
             expert health care.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-[30px] mt-[30px] lg:mt[55px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-[30px] mt-[30px]">
           <div className="py-[30px] px-5 border box">
             <div className="flex item-center justify-center">
               <img src={find} alt="" />
@@ -101,7 +101,7 @@ function Banner() {
               </Link>
             </div>
           </div>
-          <div className="py-[30px] px-5 border box">
+          <div className="lg:py-[30px] px-5 border box">
             <div className="flex item-center justify-center">
               <img src={location} alt="" />
             </div>
@@ -120,12 +120,12 @@ function Banner() {
               </Link>
             </div>
           </div>
-          <div className="py-[30px] px-5 border box">
+          <div className="py-[40px] px-5 border box">
             <div className="flex item-center justify-center">
-              <img src={booking} alt="" className="h-[275px] w-[275px]" />
+              <img src={booking} alt="" className="" />
             </div>
-            <div className="mt-[30px] text-center text-[26px] font-bold">
-              <h2>Book an Appointment</h2>
+            <div className=" mt-[30px] text-center text-[26px] font-bold">
+              <h2>Book a Slot</h2>
               <p className="text-[16px] leading-77 font-[40] mt-1 text-center">
                 {" "}
                 World class care for everyone, Our health System offers
