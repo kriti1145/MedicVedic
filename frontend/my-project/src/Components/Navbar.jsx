@@ -75,7 +75,7 @@ function Navbar() {
             </div>
             <img src={logo} alt="" className="w-8 h-8" />
             <a
-              className={`logo text-2xl font-bold cursor-pointer ${
+              className={`logo text-xl md:text-2xl font-bold cursor-pointer ${
                 sticky ? "logo-stick" : ""
               }`}
             >

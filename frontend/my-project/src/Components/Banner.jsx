@@ -9,42 +9,43 @@ import About from "../Components/About";
 import Service from "../Pages/Service";
 import Feature from "./Feature";
 import Doctor from "./Doctor";
+import Faq from "./faq/Faq";
 
 function Banner() {
   return (
     <>
       <div className="max-w-screen-2xl container md:px-20 px-5 flex flex-col mx-auto md:flex-row py-10 md:ps-20 ">
-        <div className=" order-2 md:order-1 w-full md:w-1/2 md:mt-32 mt-12 ">
-          <div className="space-y-12 ">
-            <h1 className="text-6xl font-bold">
+        <div className=" order-2 md:order-1 w-full md:w-1/2 md:mt-32 mt-12 md:pr-12">
+          <div className="space-y-6 md:space-y-12">
+            <h1 className=" text-4xl md:text-6xl font-bold leading-tight">
               We help patients
               <br /> live a <span className="span-text">healthy</span>,
               <br />
               <span className="span-text">longer life.</span>
             </h1>
-            <p className="text-xl">
+            <p className=" text-[16px] md:text-xl leading-relaxed">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad facere
               quod ipsam sit similique in tempore. Ipsum aspernatur enim
               sapiente, doloremque consequuntur harum perspiciatis dicta
               provident nihil dignissimos numquam voluptatem.
             </p>
           </div>
-          <button className="btn btn-active outline-none mt-7 text-white banner-btn">
+          <button className="btn btn-active outline-none mt-5 md:mt-7 text-white banner-btn">
             Request an Appointement
           </button>
         </div>
-        <div className=" order-1 md:order-2 w-full md:w-1/2 md:mt-20  mt-10 p-200 ml-10 splash ">
+        <div className=" order-1 md:order-2 w-full md:w-1/2 flex justify-center md:justify-end mt-10 md:mt-20 splash ms-[20px] md:ms-[10px]">
           {" "}
           <img
             src={img}
             alt=""
-            className="w-100 h-92 md:w-100 md:h-92 
+            className=" md:ms-3 w-full md:w-auto h-auto
            "
           />
         </div>
       </div>
       {/*=========banner counter=========*/}
-      <div className=" flex flex-col md:item-center item-center mx-auto gap-3 md:gap-[50px] md:flex-row counter place-items-center md:mt-[40px]">
+      <div className=" flex flex-col md:flex-row justify-center items-center gap-3 md:gap-10 mt-10 md:mt-16 counter md:mt-[40px]">
         <div className="">
           <h2 className="text-[36px] leading-[56px] md:text-[44px] md:leading:[54px] font-[700] text-neutral-800 text-center">
             30+
@@ -69,17 +70,15 @@ function Banner() {
       </div>
 
       {/*how it work section*/}
-      <div className="max-w-screen-2xl  mx-auto md:px-20 px-4 m-3 py-1">
-        <div className="mt-[30px]">
-          <h1 className="text-3xl font-bold pb-2 text-center">
+      <div className=" mx-auto md:px-20 px-4 py-10 mt-3">
+        <div className="text-center  mb-10">
+          <h1 className="text-3xl font-bold pb-2">
             Providing the best medical services
           </h1>
-          <div className="md:px-[450px]">
-            <p className="text-center font-[26px]">
-              World class care for everyone, Our health System offers unmatched,
-              expert health care.
-            </p>
-          </div>
+          <p className="lg:px-72 text-lg">
+            World class care for everyone, Our health System offers unmatched,
+            expert health care.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-[30px] mt-[30px] lg:mt[55px]">
@@ -151,6 +150,19 @@ function Banner() {
       <Feature />
       {/*====== Doctor ======*/}
       <Doctor />
+      {/*====== Faq ======*/}
+      <Faq />
+      {/*====== testimonial ======*/}
+      <div className="max-w-screen-2xl container md:px-20 px-5 flex flex-col mx-auto py-10 ">
+        <div className="text-center">
+          <h1 className="text-3xl font-bold pb-2 ">What Our Patient Say</h1>
+
+          <p className="text-xl">
+            World class care for everyone, Our health System offers unmatched,
+            expert health care.
+          </p>
+        </div>
+      </div>
     </>
   );
 }

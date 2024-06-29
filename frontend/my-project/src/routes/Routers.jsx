@@ -5,6 +5,8 @@ import About from "../Components/About";
 import Service from "../Pages/Service";
 import Feature from "../Components/Feature";
 import Doctor from "../Components/Doctor";
+import Faq from "../Components/faq/Faq";
+import Testimonial from "../Components/testimonial/Testimonial";
 
 const Routers = () => {
   return (
@@ -18,6 +20,7 @@ const Routers = () => {
         <Route path="/feature" element={<Feature />} />
         <Route path="/about" element={<About />} />
         <Route path="/doctor" element={<Doctor />} />
+        <Route path="/faq" element={<Faq />} />
       </Routes>
     </>
   );

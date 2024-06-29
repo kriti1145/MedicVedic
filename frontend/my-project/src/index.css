@@ -146,7 +146,7 @@ transition: .5s ease;
 
 }
 .aboutbtn:hover{
-  background-color: #7cb8aa;
+  background-color: #C5D9CC;
   box-shadow: 0 0.9em 0.9em -0.8em rgb(13, 13, 13);
   transform: translateY(-0.25em);
   color: #313340;
