@@ -1,9 +1,10 @@
 import React from "react";
+
 import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const ServiceCard = ({ item, index }) => {
-  const { name, desc, bgColor, textColor, ServiceImg } = item;
+  const { name, desc, bgColor, ServiceImg } = item;
   return (
     <>
       <div className="px-3 lg:px-5 border bg-[#e7f0dc] rounded-[20px] service-card">

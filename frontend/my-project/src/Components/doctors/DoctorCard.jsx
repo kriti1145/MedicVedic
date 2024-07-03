@@ -45,7 +45,7 @@ const DoctorCard = ({ doctor }) => {
             <p className="text-sm lg:text-base text-[#313340]">At {hospital}</p>
           </div>
           <Link
-            to="/doctors"
+            to="/docdetail"
             className="w-[44px] h-[44px] rounded-full border border-solid border-[#7cb8aa] mt-3 flex items-center justify-center group hover:bg-[#7cb8aa] hover:border-none"
           >
             <BsArrowRight className="text-[#7cb8aa] group-hover:text-white w-6 h-5" />
