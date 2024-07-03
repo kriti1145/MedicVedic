@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import doctorImg from "../../assets/Images/doctor-img/doc-2.png";
 import starIcon from "../../assets/Images/doctor-img/star.png";
+import DoctorAbout from "./DoctorAbout";
+import DocFeedback from "./DocFeedback";
 
 const DoctorDetail = () => {
   const [tab, setTab] = useState("about");
@@ -19,13 +21,13 @@ const DoctorDetail = () => {
                 />
               </figure>
               <div>
-                <span className="bg-[#C5D9CC] py-2 px-3 text-sm lg:text-base text-[#333333] font-semibold rounded">
-                  Surgeon
-                </span>
                 <h3 className="text-[22px] leading-9 mt-3 font-bold">
                   Muhibur Rahman
                 </h3>
-                <div className="flex items-center gap-[6px]">
+                <span className="bg-[#C5D9CC] py-1 px-3 text-sm lg:text-base text-[#333333] font-semibold rounded mt-3 mb-3">
+                  Surgeon
+                </span>
+                <div className="flex items-center gap-[6px] mt-2">
                   <span className="flex items-center gap-[6px] text-[14px] leading-5 lg:text-[16px] lg:leading-7 font-semibold ">
                     <img src={starIcon} alt="" className="h-4 w-4 " /> 4.8
                   </span>
@@ -64,7 +66,10 @@ const DoctorDetail = () => {
               </button>
             </div>
 
-            
+            <div className="mt-[50px]">
+              {tab === "about" && <DoctorAbout />}
+              {tab === "feedback" && <DocFeedback />}
+            </div>
           </div>
         </div>
       </div>
