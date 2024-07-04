@@ -222,9 +222,28 @@ transition: .5s ease;
   color: #313340;
 }
 
+/*contact page*/
+.contact-btn{
+  color: #313340;
+  background-color: #7cb8aa;
+  border-radius: 1000px;
+  box-shadow:  0 0.9em 0.9em -0.8em  rgb(99, 140, 116);
+  transform: translateY(-1px);
+
+}
+
+.contact-btn:hover{
+  background-color: #C5D9CC;
+  box-shadow: 0 0.9em 0.9em -0.8em rgb(99, 140, 116);
+  transform: translateY(-0.25em);
+  color: #313340;
+}
+
+
+
 /*footer*/
 .footer{
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
  color: #333333;
 }
 .footer-logo{

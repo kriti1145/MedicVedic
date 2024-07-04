@@ -47,9 +47,17 @@ function Navbar() {
       <li className="nav-li">
         <a
           className="block px-4 py-2 text-sm lg:text-base font-medium "
-          href="/"
+          href="/contact"
         >
           Contact
+        </a>
+      </li>
+      <li className="nav-li block lg:hidden">
+        <a
+          className="block px-4 py-2 text-sm lg:text-base font-medium "
+          href="/login"
+        >
+          Login
         </a>
       </li>
     </>

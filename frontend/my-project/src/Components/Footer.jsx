@@ -78,7 +78,7 @@ function Footer() {
             <a href="/appointment" className="link link-hover">
               Request an appointment
             </a>
-            <a href="/faq" className="link link-hover">
+            <a href="/contact" className="link link-hover">
               Get a opinion
             </a>
           </nav>

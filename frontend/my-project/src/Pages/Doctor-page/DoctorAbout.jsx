@@ -4,7 +4,7 @@ const DoctorAbout = () => {
   return (
     <>
       <div>
-        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold flex items-center gap-2">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold flex items-center gap-2 ">
           About{" "}
           <span className="text-[#366459] text-xl sm:text-2xl md:text-3xl">
             Muhibur Rahman
@@ -26,7 +26,9 @@ const DoctorAbout = () => {
               <span className="text-[#366459] text-sm md:text-base font-semibold">
                 {formateDate("01-03-2015")} - {formateDate("07-10-2018")}
               </span>
-              <p className="text-sm md:text-base font-medium">PHD in Surgery</p>
+              <p className="text-sm md:text-base font-medium">
+                United States Medical Licensing Examination
+              </p>
             </div>
             <p className="text-sm md:text-base font-medium">
               New Apollo Hospital, New Delhi.
@@ -37,7 +39,9 @@ const DoctorAbout = () => {
               <span className="text-[#366459] text-sm md:text-base font-semibold">
                 {formateDate("07-10-2010")} - {formateDate("07-10-2014")}
               </span>
-              <p className="text-sm md:text-base font-medium">PHD in Surgery</p>
+              <p className="text-sm md:text-base font-medium">
+                Surgical Residency
+              </p>
             </div>
             <p className="text-sm md:text-base font-medium">
               New Apollo Hospital, New Delhi.

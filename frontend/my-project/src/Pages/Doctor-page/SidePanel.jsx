@@ -4,7 +4,7 @@ const SidePanel = () => {
   return (
     <div className="shadow-panelShadow p-4 lg:p-6 rounded-md md:mt-8">
       <div className="flex items-center justify-between">
-        <p className="font-bold text-lg lg:text-xl">Ticket Price</p>
+        <p className="font-bold text-lg lg:text-xl">Consultant Price</p>
         <span className="text-lg lg:text-xl font-semibold text-[#366459]">
           Rs. 500
         </span>
