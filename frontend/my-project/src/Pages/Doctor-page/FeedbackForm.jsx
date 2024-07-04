@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AiFillStar } from "react-icons/ai";
+
 const FeedbackForm = () => {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
@@ -7,64 +8,63 @@ const FeedbackForm = () => {
 
   const handleSubmitReview = async (e) => {
     e.preventDefault();
+    // Handle review submission logic here
   };
 
   return (
-    <>
-      <form action="">
-        <div className="text-center">
-          <h3 className="text-[16px] leading-6 font-semibold  mb-4 mt-0">
-            How would you rate your overall experience?
-          </h3>
-          <div>
-            {[...Array(5).keys()].map((_, index) => {
-              index += 1;
-              return (
-                <button
-                  key={index}
-                  type="button"
-                  className={`${
-                    index <= ((rating && hover) || hover)
-                      ? "text-[#FDA403]"
-                      : "text-gray-400"
-                  } bg-transparent border-none outline-none text-[22px] cursor-pointer`}
-                  onClick={() => setRating(index)}
-                  onMouseEnter={() => setHover(index)}
-                  onMouseLeave={() => setHover(rating)}
-                  onDoubleClick={() => {
-                    setHover(0);
-                    setRating(0);
-                  }}
-                >
-                  <span>
-                    <AiFillStar />
-                  </span>
-                </button>
-              );
-            })}
-          </div>
+    <form onSubmit={handleSubmitReview} className="max-w-lg mx-auto mt-6">
+      <div className="text-center">
+        <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-4">
+          How would you rate your overall experience?
+        </h3>
+        <div>
+          {[...Array(5).keys()].map((_, index) => {
+            index += 1;
+            return (
+              <button
+                key={index}
+                type="button"
+                className={`${
+                  index <= (hover || rating)
+                    ? "text-[#FDA403]"
+                    : "text-gray-400"
+                } bg-transparent border-none outline-none text-lg md:text-xl cursor-pointer`}
+                onClick={() => setRating(index)}
+                onMouseEnter={() => setHover(index)}
+                onMouseLeave={() => setHover(rating)}
+                onDoubleClick={() => {
+                  setHover(0);
+                  setRating(0);
+                }}
+              >
+                <AiFillStar />
+              </button>
+            );
+          })}
         </div>
+      </div>
 
-        <div className="mt-[30px]">
-          <h3 className="text-[16px] leading-6 font-semibold  mb-4 mt-0">
-            Share your feedback or suggestions*
-          </h3>
-          <textarea
-            className="border border-solid border-[#C5D9CC] focus:outline outline-[#7cb8aa] w-full px-4 py-3 rounded-md bg-gray-100"
-            row="5"
-            placeholder="write your message"
-            onChange={(e) => setReviewText(e.target.value)}
-          />
-        </div>
+      <div className="mt-8">
+        <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-4">
+          Share your feedback or suggestions*
+        </h3>
+        <textarea
+          className="border border-solid border-gray-300 focus:border-[#7cb8aa] focus:outline-none w-full px-4 py-3 rounded-md bg-gray-100 text-sm md:text-base"
+          rows="5"
+          placeholder="Write your message"
+          value={reviewText}
+          onChange={(e) => setReviewText(e.target.value)}
+        />
+      </div>
+      <div className="text-center">
         <button
-          className="btn px-6 mt-5 text-[16px]  border-0 rounded-full bg-[#7cb8aa] text-gray-700 hover:bg-[#C5D9CC] text-[#7cb8aa] form-btn"
-          onClick={handleSubmitReview}
+          type="submit"
+          className="btn mt-5 px-6 text-sm md:text-base font-semibold rounded-full bg-[#7cb8aa] text-gray-700 hover:bg-[#C5D9CC] text-[#7cb8aa] form-btn border-0"
         >
-          {" "}
           Submit
         </button>
-      </form>
-    </>
+      </div>
+    </form>
   );
 };
 

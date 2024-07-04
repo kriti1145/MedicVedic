@@ -40,7 +40,7 @@ const Register = () => {
             </div>
 
             {/* =========== form =========== */}
-            <div className="rounded-r-lg lg:pl-16 py-10 text-center bg-gray-200 lg:pr-16">
+            <div className="rounded-r-lg lg:pl-16 py-10 text-center bg-gray-200 lg:pr-16 px-6 py-10">
               <h3 className="text-[29px] leading-9 font-bold mb-10">
                 Create an <span className="text-[#366459]">account</span>
               </h3>
