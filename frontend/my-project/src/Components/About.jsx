@@ -38,7 +38,7 @@ const About = () => {
               assumenda pariatur officiis. Est, cupiditate.
             </p>
             <Link to="/">
-              <button className="btn aboutbtn px-7 py-2 font-bold text-white ">
+              <button className="btn aboutbtn px-7 py-2 font-bold text-white border-none ">
                 Learn More
               </button>
             </Link>

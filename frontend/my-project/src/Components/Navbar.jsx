@@ -145,7 +145,7 @@ function Navbar() {
             {/*button*/}
             <div className="hidden md:block">
               <a
-                href="#"
+                href="/login"
                 className={`bg-white px-6 py-2 duration-300 cursor-pointer login ${
                   sticky ? "txt duration-300 transition-all ease-in-out " : ""
                 }`}
