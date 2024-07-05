@@ -29,18 +29,18 @@ const DocFeedback = () => {
             <p className="text-xs md:text-sm text-gray-600">
               {formateDate("07-10-2019")}
             </p>
+            <div className="flex gap-1 items-center mt-3 md:mt-0">
+              {[...Array(5).keys()].map((_, index) => (
+                <AiFillStar
+                  key={index}
+                  className="mt-1 w-3 h-3 md:w-4 md:h-4 text-[#FDA403]"
+                />
+              ))}
+            </div>
             <p className="mt-2 text-sm md:text-base font-medium">
               Good services, highly recommended.
             </p>
           </div>
-        </div>
-        <div className="flex gap-1 items-center mt-3 md:mt-0">
-          {[...Array(5).keys()].map((_, index) => (
-            <AiFillStar
-              key={index}
-              className="w-4 h-4 md:w-5 md:h-5 text-[#FDA403]"
-            />
-          ))}
         </div>
       </div>
 
