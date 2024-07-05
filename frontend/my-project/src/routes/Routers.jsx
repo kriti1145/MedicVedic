@@ -10,6 +10,7 @@ import DoctorDetail from "../Pages/Doctor-page/DoctorDetail";
 import Login from "../Pages/login-form/Login";
 import Register from "../Pages/register/Register";
 import Contact from "../Pages/contact/Contact";
+import Testimonial from "../Components/testimonial/Testimonial";
 
 const Routers = () => {
   return (
@@ -28,6 +29,7 @@ const Routers = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/testimonial" element={<Testimonial />} />
       </Routes>
     </>
   );

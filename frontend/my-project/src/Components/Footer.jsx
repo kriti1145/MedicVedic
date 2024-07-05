@@ -66,17 +66,11 @@ function Footer() {
             <a href="/service" className="link link-hover">
               Services
             </a>
-            <a href="/blog" className="link link-hover">
-              Blog
-            </a>
           </nav>
           <nav>
             <h6 className="footer-title">I want to:</h6>
             <a href="/findDoctor" className="link link-hover">
               Find a Doctor
-            </a>
-            <a href="/appointment" className="link link-hover">
-              Request an appointment
             </a>
             <a href="/contact" className="link link-hover">
               Get a opinion
@@ -89,9 +83,6 @@ function Footer() {
             </a>
             <a href="/privacy" className="link link-hover">
               Privacy policy
-            </a>
-            <a href="/cookies" className="link link-hover">
-              Cookie policy
             </a>
           </nav>
         </footer>

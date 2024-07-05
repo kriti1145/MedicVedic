@@ -1,5 +1,6 @@
 import React from "react";
 import map from "../../assets/Images/contact/map.png";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 const Contact = () => {
   return (
@@ -68,6 +69,35 @@ const Contact = () => {
               </button>
             </div>
           </form>
+        </div>
+      </div>
+
+      <div className=" mt-[40px] flex flex-col md:flex-row mx-5 md:mx-[37px] items-start md:items-center justify-between space-y-6 md:space-y-0 md:space-x-5 p-6 bg-gray-200 rounded-sm shadow-t-xl shadow-b-xl">
+        <div className="address flex items-center mb-4 md:mb-0">
+          <FaMapMarkerAlt className="text-xl md:text-5xl text-[#366459] mr-3" />
+          <div>
+            <div className="font-bold text-gray-700 md:text-[22px]">
+              Address
+            </div>
+            <div className="text-gray-600">Surkhet, NP12</div>
+            <div className="text-gray-600">Birendranagar 06</div>
+          </div>
+        </div>
+        <div className="phone flex items-center mb-4 md:mb-0">
+          <FaPhoneAlt className="text-xl md:text-5xl text-[#366459] mr-3" />
+          <div>
+            <div className="font-bold text-gray-700 md:text-[22px]">Phone</div>
+            <div className="text-gray-600">+0098 9893 5647</div>
+            <div className="text-gray-600">+0096 3434 5678</div>
+          </div>
+        </div>
+        <div className="email flex items-center">
+          <FaEnvelope className="text-xl md:text-5xl text-[#366459] mr-3" />
+          <div>
+            <div className="font-bold text-gray-700 md:text-[22px]">Email</div>
+            <div className="text-gray-600">codinglab@gmail.com</div>
+            <div className="text-gray-600">info.codinglab@gmail.com</div>
+          </div>
         </div>
       </div>
     </div>
