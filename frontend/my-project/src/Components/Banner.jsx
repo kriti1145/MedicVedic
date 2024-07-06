@@ -31,9 +31,11 @@ function Banner() {
               provident nihil dignissimos numquam voluptatem.
             </p>
           </div>
-          <button className="btn btn-active outline-none mt-5 md:mt-7 text-white banner-btn">
-            Request an Appointement
-          </button>
+          <Link to="/findDoctor">
+            <button className="btn btn-active outline-none mt-5 md:mt-7 text-white banner-btn">
+              Request an Appointement
+            </button>
+          </Link>
         </div>
         <div className=" order-1 md:order-2 w-full md:w-1/2 flex justify-center md:justify-end mt-10 md:mt-20 splash ms-[20px] md:ms-[10px]">
           {" "}
@@ -95,7 +97,7 @@ function Banner() {
                 unmatched, expert health care. From the lab to the clinic
               </p>
               <Link
-                to="/doctors"
+                to="/findDoctor"
                 className="w-[44px] h-[44px] rounded-full border border-solid border-[#7cb8aa] mt-[30px] mx-auto flex items-center justify-center group hover:bg-[#7cb8aa] hover:border-none    "
               >
                 <BsArrowRight className=" text-[#7cb8aa] group-hover:text-white w-6 h-5" />
@@ -114,7 +116,7 @@ function Banner() {
                 unmatched, expert health care. From the lab to the clinic
               </p>
               <Link
-                to="/doctors"
+                to="/contact"
                 className="w-[44px] h-[44px] rounded-full border border-solid border-[#7cb8aa] mt-[30px] mx-auto flex items-center justify-center group hover:bg-[#7cb8aa] hover:border-none  "
               >
                 <BsArrowRight className=" text-[#7cb8aa] group-hover:text-white w-6 h-5" />
@@ -133,7 +135,7 @@ function Banner() {
                 unmatched, expert health care. From the lab to the clinic
               </p>
               <Link
-                to="/doctors"
+                to="/"
                 className="w-[44px] h-[44px] rounded-full banner-link border border-solid border-[#7cb8aa] mt-[30px] mx-auto flex items-center justify-center group hover:bg-[#7cb8aa] hover:border-none  "
               >
                 <BsArrowRight className=" text-[#7cb8aa] group-hover:text-white w-6 h-5" />
