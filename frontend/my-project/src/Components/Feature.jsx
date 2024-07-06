@@ -1,7 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import feaureImg from "../assets/Images/features/feature.jpg";
+
 const Feature = () => {
+  const [showMore, setShowMore] = useState(false);
+
+  const handleToggle = () => {
+    setShowMore(!showMore);
+  };
   return (
     <>
       <div className="max-w-screen-2xl container md:px-20 px-5 flex flex-col mx-auto md:flex-row py-10 md:py-16 lg:gap-5">
@@ -23,11 +28,21 @@ const Feature = () => {
                 online scheduling tool to select an appointment time.
               </li>
             </ul>
-            <Link to="/">
-              <button className="px-3 mt-5 ms-3 py-2 font-semibold text-sm md:text-base border-0  feature-btn">
-                Learn more
-              </button>
-            </Link>
+            {showMore && (
+              <ul className="pl-1 text-[16px] md:text-lg ">
+                <li className="mb-2">
+                  4.National and International Accolades.
+                </li>
+                <li className="mb-2">5. Compassionate Care.</li>
+                <li className="mb-2">6. Patient-Centered Approach.</li>
+              </ul>
+            )}
+            <button
+              onClick={handleToggle}
+              className="px-3 mt-5 ms-3 py-2 font-semibold text-sm md:text-base border-0  feature-btn"
+            >
+              {showMore ? "Hide" : "Learn More"}
+            </button>
           </div>
         </div>
         {/*====== about image ======*/}
