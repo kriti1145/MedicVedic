@@ -72,17 +72,14 @@ function Footer() {
             <a href="/findDoctor" className="link link-hover">
               Find a Doctor
             </a>
-            <a href="/contact" className="link link-hover">
-              Get a opinion
+            <a href="/faq" className="link link-hover">
+              Frequently Asked Questions
             </a>
           </nav>
           <nav>
             <h6 className="footer-title">Support</h6>
-            <a href="/terms" className="link link-hover">
-              Terms of use
-            </a>
-            <a href="/privacy" className="link link-hover">
-              Privacy policy
+            <a href="/contact" className="link link-hover">
+              Contact Us
             </a>
           </nav>
         </footer>
