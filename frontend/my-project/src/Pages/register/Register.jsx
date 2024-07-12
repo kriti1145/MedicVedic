@@ -1,30 +1,65 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import registerimg from "../../assets/Images/registeration/registerimg.png";
 import avatar from "../../assets/Images/doctor-img/doc-1.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import uploadImageToCloudinary from "../../utils/uploadCloudinary";
+import { BASE_URL } from "../../config";
+import { toast } from "react-toastify";
+import HashLoader from "react-spinners/HashLoader";
 
 const Register = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewURL, setPreviewURL] = useState("");
-  const [formDate, setFormDate] = useState({
+  const [loading, setLoading] = useState(false);
+
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
-    photo: "",
+    photo: selectedFile,
     gender: "",
     role: "patient",
   });
 
+  const navigate = useNavigate();
+
   const handleInputChange = (e) => {
-    setFormDate({ ...formDate, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handelFileInputChange = async (event) => {
-    const file = event.target.file[0];
+  const handleFileInputChange = async (event) => {
+    const file = event.target.files[0];
+    const data = await uploadImageToCloudinary(file);
+    setPreviewURL(data.url);
+    setSelectedFile(data.url);
+    setFormData({ ...formData, photo: data.url });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
+
+    try {
+      const res = await fetch(`${BASE_URL}/auth/register`, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const { message } = await res.json();
+
+      if (!res.ok) {
+        throw new Error(message);
+      }
+      setLoading(false);
+      toast.success(message);
+      navigate("/login");
+    } catch (err) {
+      toast.error(err.message);
+      setLoading(false);
+    }
   };
 
   return (
@@ -51,7 +86,7 @@ const Register = () => {
                     type="text"
                     placeholder="Full name"
                     name="name"
-                    value={formDate.name}
+                    value={formData.name}
                     onChange={handleInputChange}
                     className="bg-transparent w-full pr-4 py-1 border-b-[2px] border-solid focus:border-[#7cb8aa] focus:outline-none border-b-[#C5D9CC] text-[16px] leading-7  cursor-pointer"
                     required
@@ -62,7 +97,7 @@ const Register = () => {
                     type="email"
                     placeholder="Enter Your Email"
                     name="email"
-                    value={formDate.email}
+                    value={formData.email}
                     onChange={handleInputChange}
                     className="bg-transparent w-full pr-4 py-1 border-b-[2px] border-solid focus:border-[#7cb8aa] focus:outline-none border-b-[#C5D9CC] text-[16px] leading-7  cursor-pointer"
                     required
@@ -73,7 +108,7 @@ const Register = () => {
                     type="password"
                     placeholder="Enter Your Password"
                     name="password"
-                    value={formDate.password}
+                    value={formData.password}
                     onChange={handleInputChange}
                     className="bg-transparent w-full pr-4 py-1 border-b-[2px] border-solid focus:border-[#7cb8aa] focus:outline-none border-b-[#C5D9CC] text-[16px] leading-7  cursor-pointer"
                     required
@@ -85,7 +120,7 @@ const Register = () => {
                     Are you a:
                     <select
                       name="role"
-                      value={formDate.role}
+                      value={formData.role}
                       onChange={handleInputChange}
                       className="font-medium text-[15px] leading-7 px-4 py-2 focus:outline-none bg-transparent "
                     >
@@ -97,7 +132,7 @@ const Register = () => {
                     Gender:
                     <select
                       name="gender"
-                      value={formDate.gender}
+                      value={formData.gender}
                       onChange={handleInputChange}
                       className="font-medium text-[15px] leading-7 px-4 py-2 focus:outline-none bg-transparent"
                     >
@@ -109,19 +144,21 @@ const Register = () => {
                 </div>
 
                 <div className="mb-5 flex items-center gap-3">
-                  <figure className="w-[50px] h-[50px] rounded-full border border-solid border-[#7cb8aa] flex items-center justify-center bg-gray-200">
-                    <img
-                      src={avatar}
-                      alt=""
-                      className="w-full rounded-full bg-gray-200"
-                    />
-                  </figure>
+                  {selectedFile && (
+                    <figure className="w-[50px] h-[50px] rounded-full border border-solid border-[#7cb8aa] flex items-center justify-center bg-gray-200">
+                      <img
+                        src={previewURL}
+                        alt=""
+                        className="w-full rounded-full bg-gray-200"
+                      />
+                    </figure>
+                  )}
                   <div className="relative w-[130px] h-[40px]">
                     <input
                       type="file"
                       name="photo"
                       id="customFile"
-                      onChange={handelFileInputChange}
+                      onChange={handleFileInputChange}
                       accept=".jpg, .png"
                       className="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer"
                     />
@@ -136,10 +173,16 @@ const Register = () => {
 
                 <div className=" mt-7">
                   <button
+                    disabled={loading && true}
+                    type="submit"
                     className="btn px-4 text-[15px] text-white border-none login-form-btn w-full rounded-lg
               "
                   >
-                    Submit
+                    {loading ? (
+                      <HashLoader size={35} color="fffff" />
+                    ) : (
+                      "Submit"
+                    )}
                   </button>
                 </div>
 
