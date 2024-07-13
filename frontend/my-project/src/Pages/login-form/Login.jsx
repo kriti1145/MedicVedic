@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../config";
 import { authContext } from "../../context/AuthContext.jsx";
 import { toast } from "react-toastify";
+import BeatLoader from "react-spinners/BeatLoader";
 
 const Login = () => {
   const [formData, setformData] = useState({
@@ -94,7 +95,8 @@ const Login = () => {
                 className="btn px-4 text-[15px] text-white border-none login-form-btn w-full rounded-lg
               "
               >
-                Submit
+                {" "}
+                {loading ? <BeatLoader size={15} color="#fff" /> : "Login"}
               </button>
             </div>
 

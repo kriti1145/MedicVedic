@@ -140,7 +140,7 @@ function Navbar() {
                     alt=""
                   />
                 </figure>
-                <h2 className="py-2">{user?.name}</h2>
+                <h2 className="py-2 font-bold text-md ">{user?.name}</h2>
               </Link>
             </div>
           ) : (

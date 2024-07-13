@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import uploadImageToCloudinary from "../../utils/uploadCloudinary";
 import { BASE_URL } from "../../config";
 import { toast } from "react-toastify";
-import HashLoader from "react-spinners/HashLoader";
+import BeatLoader from "react-spinners/BeatLoader";
 
 const Register = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -179,9 +179,9 @@ const Register = () => {
               "
                   >
                     {loading ? (
-                      <HashLoader size={35} color="fffff" />
+                      <BeatLoader size={15} color="fffff" />
                     ) : (
-                      "Submit"
+                      "Register"
                     )}
                   </button>
                 </div>
