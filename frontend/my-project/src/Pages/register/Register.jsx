@@ -9,7 +9,7 @@ import HashLoader from "react-spinners/HashLoader";
 
 const Register = () => {
   const [selectedFile, setSelectedFile] = useState(null);
-  const [previewURL, setPreviewURL] = useState("");
+  const [previewURL, setPreviewURL] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -29,8 +29,8 @@ const Register = () => {
 
   const handleFileInputChange = async (event) => {
     const file = event.target.files[0];
+    setPreviewURL(URL.createObjectURL(file));
     const data = await uploadImageToCloudinary(file);
-    setPreviewURL(data.url);
     setSelectedFile(data.url);
     setFormData({ ...formData, photo: data.url });
   };
@@ -144,7 +144,7 @@ const Register = () => {
                 </div>
 
                 <div className="mb-5 flex items-center gap-3">
-                  {selectedFile && (
+                  {previewURL && (
                     <figure className="w-[50px] h-[50px] rounded-full border border-solid border-[#7cb8aa] flex items-center justify-center bg-gray-200">
                       <img
                         src={previewURL}

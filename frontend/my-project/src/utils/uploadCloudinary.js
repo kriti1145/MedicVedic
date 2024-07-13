@@ -5,7 +5,8 @@ const uploadImageToCloudinary = async (file) => {
   const uploadData = new FormData();
 
   uploadData.append("file", file);
-  uploadData.append("upload_preset", upload_preset);
+  uploadData.append("upload_preset", "medicvedic_backend_image");
+  uploadData.append("api_key", "629968164683319");
   console.log("Upload Preset:", upload_preset); // Should log 'medicvedic_backend_image'
   console.log("Cloud Name:", cloud_name); // Should log 'medicvedic'
 
