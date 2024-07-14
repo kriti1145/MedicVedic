@@ -1,4 +1,3 @@
-import { Routes, Route } from "react-router-dom";
 import Banner from "../Components/Banner";
 import About from "../Components/About";
 import Service from "../Pages/Service";
@@ -11,6 +10,11 @@ import Login from "../Pages/login-form/Login";
 import Register from "../Pages/register/Register";
 import Contact from "../Pages/contact/Contact";
 import Testimonial from "../Components/testimonial/Testimonial";
+import UserAccount from "../Dashboard/user-account/UserAccount";
+import DoctorAccount from "../Dashboard/doctor-account/DoctorAccount";
+import ProtectedRoutes from "./ProtectedRoutes";
+
+import { Routes, Route } from "react-router-dom";
 
 const Routers = () => {
   return (
@@ -30,6 +34,23 @@ const Routers = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/testimonial" element={<Testimonial />} />
+
+        <Route
+          path="/users/profile/me"
+          element={
+            <ProtectedRoutes allowedRoles={["patient"]}>
+              <UserAccount />
+            </ProtectedRoutes>
+          }
+        />
+        <Route
+          path="/doctors/profile/me"
+          element={
+            <ProtectedRoutes allowedRoles={["doctor"]}>
+              <DoctorAccount />
+            </ProtectedRoutes>
+          }
+        />
       </Routes>
     </>
   );

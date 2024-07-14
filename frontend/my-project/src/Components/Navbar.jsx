@@ -136,7 +136,7 @@ function Navbar() {
                 <figure className="w-[40px] h-[40px] rounded-full border border-solid border-[#7cb8aa] flex items-center justify-center bg-gray-200 ">
                   <img
                     src={user?.photo}
-                    className="w-full rounded-full bg-gray-200"
+                    className="w-full h-full rounded-full bg-gray-200"
                     alt=""
                   />
                 </figure>
