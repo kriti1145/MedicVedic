@@ -1,6 +1,5 @@
 import { useState } from "react";
 import registerimg from "../../assets/Images/registeration/registerimg.png";
-import avatar from "../../assets/Images/doctor-img/doc-1.png";
 import { Link, useNavigate } from "react-router-dom";
 import uploadImageToCloudinary from "../../utils/uploadCloudinary";
 import { BASE_URL } from "../../config";
@@ -179,7 +178,7 @@ const Register = () => {
               "
                   >
                     {loading ? (
-                      <BeatLoader size={15} color="fffff" />
+                      <BeatLoader size={15} color="#fff" />
                     ) : (
                       "Register"
                     )}

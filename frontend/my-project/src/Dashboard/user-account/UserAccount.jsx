@@ -31,7 +31,7 @@ const UserAccount = () => {
           {error && !loading && <Error errMessage={error} />}
           {!loading && !error && (
             <div className="grid md:grid-cols-3 gap-20">
-              <div className="pb-[10px] px-[30px] rounded-md border border-[#C5D9CC] px-3 py-10 bg-[#e7f0dc]">
+              <div className="pb-[40px] px-[30px] rounded-md border border-[#C5D9CC] px-3 py-10 bg-[#e7f0dc]">
                 <div className="flex items-center justify-center">
                   <figure className="w-[100px] h-[100px] rounded-full border-2 border-solid border-[#C5D9CC]">
                     <img
