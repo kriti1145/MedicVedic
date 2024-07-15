@@ -11,6 +11,7 @@ import {
 import { authenticate, restrict } from "../author/verifyToken.js";
 
 const router = express.Router();
+
 router.get("/:id", authenticate, restrict(["patient"]), getSingleUser);
 router.get("/", authenticate, restrict(["admin"]), getAllUser);
 router.put("/:id", authenticate, restrict(["patient"]), updateUser);

@@ -6,6 +6,7 @@ import {
   getSingleDoctor,
   getDoctorProfile,
 } from "../Controllers/doctorControler.js";
+
 import { authenticate, restrict } from "../author/verifyToken.js";
 
 import reviewRouter from "./review.js";
