@@ -103,6 +103,8 @@ const ProfileSetting = ({ user }) => {
               value={formData.password}
               onChange={handleInputChange}
               className="bg-transparent w-full pr-4 py-1 border-b-[2px] border-solid focus:border-[#7cb8aa] focus:outline-none border-b-[#C5D9CC] text-[16px] leading-7  cursor-pointer pl-2"
+              arial-readonly
+              readOnly
             />
           </div>
           <div className="mb-5">

@@ -5,11 +5,7 @@ import { BASE_URL } from "../../config";
 import usefetchData from "../../hooks/usefetchData";
 
 const DoctorList = () => {
-  const {
-    data: doctors,
-    loading,
-    error,
-  } = usefetchData(`${BASE_URL}/doctors/${id}`);
+  const { data: doctors, loading, error } = usefetchData(`${BASE_URL}/doctors`);
 
   return (
     <>
