@@ -2,16 +2,10 @@ import React from "react";
 import star from "../../assets/Images/doctor-img/star.png";
 import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
+
 const DoctorCard = ({ doctor }) => {
-  const {
-    name,
-    avgRating,
-    totalRating,
-    photo,
-    specialization,
-    totalPatients,
-    hospital,
-  } = doctor;
+  const { name, avgRating, totalRating, photo, specialization, experiences } =
+    doctor;
   return (
     <>
       <div className="p-4 lg:p-6 bg-[#d9e9df] border border-[#7cb8aa] rounded-lg flex flex-col h-full">
@@ -39,13 +33,15 @@ const DoctorCard = ({ doctor }) => {
 
         <div className="mt-4 lg:mt-6 flex items-center justify-between gap-">
           <div>
-            <h3 className="text-base lg:text-lg font-semibold">
+            {/* <h3 className="text-base lg:text-lg font-semibold">
               + {totalPatients} patients
-            </h3>
-            <p className="text-sm lg:text-base text-[#313340]">At {hospital}</p>
+            </h3> */}
+            <p className="text-sm lg:text-base text-[#313340] m-3">
+              At {experiences && experiences[0]?.hospital}
+            </p>
           </div>
           <Link
-            to="/docdetail"
+            to={`/doctors/${doctor._id}`}
             className="w-[44px] h-[44px] rounded-full border border-solid border-[#7cb8aa] mt-3 flex items-center justify-center group hover:bg-[#7cb8aa] hover:border-none"
           >
             <BsArrowRight className="text-[#7cb8aa] group-hover:text-white w-6 h-5" />

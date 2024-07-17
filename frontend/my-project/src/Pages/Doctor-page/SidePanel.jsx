@@ -1,12 +1,13 @@
 import React from "react";
+import convertTime from "../../utils/convertTime";
 
-const SidePanel = () => {
+const SidePanel = ({ doctorId, ticketPrice, timeSlots }) => {
   return (
     <div className="shadow-panelShadow p-4 lg:p-6 rounded-md md:mt-8">
       <div className="flex items-center justify-between">
         <p className="font-bold text-lg lg:text-xl">Consultant Price</p>
         <span className="text-lg lg:text-xl font-semibold text-[#366459]">
-          Rs. 500
+          Rs. {ticketPrice}
         </span>
       </div>
 
@@ -15,18 +16,16 @@ const SidePanel = () => {
           Available Time Slots:
         </p>
         <ul className="mt-2">
-          <li className="flex justify-between mb-2">
-            <p className="text-base font-medium">Sunday</p>
-            <p className="text-base font-medium">4:30 PM - 8:00 PM</p>
-          </li>
-          <li className="flex justify-between mb-2">
-            <p className="text-base font-medium">Wednesday</p>
-            <p className="text-base font-medium">6:30 PM - 8:00 PM</p>
-          </li>
-          <li className="flex justify-between mb-2">
-            <p className="text-base font-medium">Friday</p>
-            <p className="text-base font-medium">1:30 PM - 6:00 PM</p>
-          </li>
+          {timeSlots?.map((item, index) => (
+            <li key={index} className="flex justify-between mb-2">
+              <p className="text-base font-medium">
+                {item.day.charAt(0).toUpperCase() + item.day.slice(1)}
+              </p>
+              <p className="text-base font-medium">
+                {convertTime(item.startingTime)} -{convertTime(item.endingTime)}
+              </p>
+            </li>
+          ))}
         </ul>
       </div>
 

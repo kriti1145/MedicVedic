@@ -61,6 +61,8 @@ function Navbar() {
       </li>
     </>
   );
+  // Debugging step: Check user object
+  console.log("User object:", user);
 
   return (
     <div
@@ -133,14 +135,16 @@ function Navbar() {
                 }`}
                 className="flex space-x-3"
               >
-                <figure className="w-[40px] h-[40px] rounded-full border border-solid border-[#7cb8aa] flex items-center justify-center bg-gray-200 ">
-                  <img
-                    src={user?.photo}
-                    className="w-full h-full rounded-full bg-gray-200"
-                    alt=""
-                  />
-                </figure>
-                <h2 className="py-2 font-bold text-md ">{user?.name}</h2>
+                {user.photo && ( // Ensure user.photo exists
+                  <figure className="w-[40px] h-[40px] rounded-full border border-solid border-[#7cb8aa] flex items-center justify-center bg-gray-200 ">
+                    <img
+                      src={user.photo}
+                      className="w-full h-full rounded-full bg-gray-200"
+                      alt=""
+                    />
+                  </figure>
+                )}
+                <h2 className="py-2 font-bold text-md ">{user.name}</h2>
               </Link>
             </div>
           ) : (

@@ -13,7 +13,7 @@ const ProfileSetting = ({ user }) => {
     name: "",
     email: "",
     password: "",
-    photo: null,
+    photo: "",
     gender: "",
     bloodType: "",
   });
@@ -47,9 +47,9 @@ const ProfileSetting = ({ user }) => {
 
     try {
       const res = await fetch(`${BASE_URL}/users/${user._id}`, {
-        method: "put",
+        method: "PUT",
         headers: {
-          "Content-Type": "application/json",
+          "content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(formData),
