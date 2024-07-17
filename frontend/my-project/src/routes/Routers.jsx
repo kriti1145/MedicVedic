@@ -13,6 +13,7 @@ import Testimonial from "../Components/testimonial/Testimonial";
 import UserAccount from "../Dashboard/user-account/UserAccount";
 import DoctorAccount from "../Dashboard/doctor-account/DoctorAccount";
 import ProtectedRoutes from "./ProtectedRoutes";
+import CheckoutSuccess from "../Pages/Doctor-page/CheckoutSuccess";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -29,11 +30,12 @@ const Routers = () => {
         <Route path="/about" element={<About />} />
         <Route path="/doctor" element={<Doctor />} />
         <Route path="/faq" element={<Faq />} />
-        <Route path="/docdetail" element={<DoctorDetail />} />
+        <Route path="/doctors/:id" element={<DoctorDetail />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/testimonial" element={<Testimonial />} />
+        <Route path="/checkout-success" element={<CheckoutSuccess />} />
 
         <Route
           path="/users/profile/me"
