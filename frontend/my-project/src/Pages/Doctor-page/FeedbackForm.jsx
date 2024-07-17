@@ -29,7 +29,7 @@ const FeedbackForm = () => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ rating, reviewText }),
       });
       const result = await res.json();
 
