@@ -5,8 +5,8 @@ import ProfileSetting from "./ProfileSetting";
 import useGetProfile from "../../hooks/usefetchData";
 import Loading from "../../loader/Loading";
 import Error from "../../Error/Error";
-
 import { BASE_URL } from "../../config";
+import { toast } from "react-toastify";
 
 const UserAccount = () => {
   const { dispatch } = useContext(authContext);
@@ -20,6 +20,35 @@ const UserAccount = () => {
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
+  };
+
+  //delete account
+  const handleDeleteAccount = async () => {
+    const confirmDeletion = window.confirm(
+      "Are you sure you want to delete your account? This action cannot be undone."
+    );
+
+    if (confirmDeletion) {
+      try {
+        const response = await fetch(`${BASE_URL}/users/profile/me`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        if (response.ok) {
+          toast.success("Account deleted successfully.");
+          dispatch({ type: "LOGOUT" });
+        } else {
+          const result = await response.json();
+          toast.error(result.message || "Failed to delete account.");
+        }
+      } catch (error) {
+        toast.error("An error occurred. Please try again.");
+      }
+    }
   };
 
   return (
@@ -65,7 +94,10 @@ const UserAccount = () => {
                   >
                     Logout
                   </button>
-                  <button className="w-full py-2 px-4 text-[#313340] leading-7  text-[14px] bg-red-600 border-0 rounded-md mt-4 text-white font-semibold">
+                  <button
+                    className="w-full py-2 px-4 text-[#313340] leading-7  text-[14px] bg-red-600 border-0 rounded-md mt-4 text-white font-semibold"
+                    onClick={handleDeleteAccount}
+                  >
                     Delete Account
                   </button>
                 </div>
