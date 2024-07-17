@@ -35,6 +35,7 @@ const DoctorDetail = () => {
     ticketPrice,
     photo,
   } = doctor;
+  console.log("rating", averageRating);
 
   return (
     <div className="max-w-screen-2xl px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-20 mx-auto py-10 lg:py-20">
@@ -44,15 +45,17 @@ const DoctorDetail = () => {
         <div className="grid md:grid-cols-3 gap-10 lg:gap-16">
           <div className="md:col-span-2">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-5">
-              <figure className="w-full md:max-w-[300px] max-h-[200px]">
-                <img
-                  src={photo}
-                  alt="Doctor"
-                  className="w-full h-auto object-cover border-b-4 border-[#C5D9CC]-600 mb-3"
-                />
-              </figure>
-              <div className="mt-[60px] lg:mt-[10px]">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold">
+              <div className="p-10 md:p-1 ">
+                <figure className="w-full h-auto md:max-w-[200px] max-h-[200px]">
+                  <img
+                    src={photo}
+                    alt="Doctor"
+                    className="object-cover border-b-4 border-[#C5D9CC]-600 mb-3"
+                  />
+                </figure>
+              </div>
+              <div className="mt-[30px] lg:mt-[10px]">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3">
                   {name}
                 </h3>
                 <span className=" bg-[#C5D9CC] py-1 px-3 text-sm lg:text-base text-[#333333] font-semibold rounded mt-2 lg:mt-3">
@@ -60,9 +63,10 @@ const DoctorDetail = () => {
                 </span>
                 <div className="flex items-center gap-2 mt-2">
                   <span className="flex items-center gap-1 text-sm lg:text-base font-semibold">
-                    <img src={starIcon} alt="Star" className="h-4 w-4" />{" "}
+                    <img src={starIcon} alt="Star" className="h-4 w-4" />
                     {averageRating}
                   </span>
+
                   <span className="text-sm lg:text-base font-normal">
                     ({totalRating})
                   </span>
@@ -73,7 +77,7 @@ const DoctorDetail = () => {
               </div>
             </div>
 
-            <div className="mt-8 lg:mt-12 border-b border-solid border-[#333333]">
+            <div className="mt-8 lg:mt-7 border-b border-solid border-[#333333]">
               <button
                 onClick={() => setTab("about")}
                 className={`py-2 px-4 sm:px-5 text-sm lg:text-base font-semibold ${
@@ -92,7 +96,7 @@ const DoctorDetail = () => {
               </button>
             </div>
 
-            <div className="mt-8 lg:mt-12">
+            <div className="mt-8 lg:mt-7">
               {tab === "about" && (
                 <DoctorAbout
                   name={name}
