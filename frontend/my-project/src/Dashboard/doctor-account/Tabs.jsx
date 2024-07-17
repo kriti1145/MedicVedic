@@ -1,7 +1,9 @@
 import { BiMenu } from "react-icons/bi";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { authContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../../config";
+import { toast } from "react-toastify";
 
 const Tabs = ({ tab, setTab }) => {
   const { dispatch } = useContext(authContext);
@@ -12,6 +14,35 @@ const Tabs = ({ tab, setTab }) => {
     navigate("/");
   };
 
+  //delete profile
+  const handleDeleteAccount = async () => {
+    const confirmDeletion = window.confirm(
+      "Are you sure you want to delete your account? This action cannot be undone."
+    );
+
+    if (confirmDeletion) {
+      try {
+        const response = await fetch(`${BASE_URL}/doctors/profile/me`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        if (response.ok) {
+          toast.success("Account and data deleted successfully.");
+          dispatch({ type: "LOGOUT" });
+          navigate("/");
+        } else {
+          const result = await response.json();
+          toast.error(result.message || "Failed to delete account.");
+        }
+      } catch (error) {
+        toast.error("An error occurred. Please try again.");
+      }
+    }
+  };
   return (
     <>
       <div className="">
@@ -58,7 +89,10 @@ const Tabs = ({ tab, setTab }) => {
             >
               Logout
             </button>
-            <button className="w-full py-2 px-4 text-[#313340] leading-7  text-[14px] bg-red-600 border-0 rounded-md mt-4 text-white font-semibold">
+            <button
+              className="w-full py-2 px-4 text-[#313340] leading-7  text-[14px] bg-red-600 border-0 rounded-md mt-4 text-white font-semibold"
+              onClick={handleDeleteAccount}
+            >
               Delete Account
             </button>
           </div>
